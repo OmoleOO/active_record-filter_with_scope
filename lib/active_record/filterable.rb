@@ -7,6 +7,7 @@ module ActiveRecord
   module Filterable
     class Error < StandardError; end
     class ArgumentError < Error; end
+    class UndefinedModelScopeError < Error; end
 
     class << self
       def extended(klass)
