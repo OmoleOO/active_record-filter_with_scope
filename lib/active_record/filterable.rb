@@ -5,6 +5,7 @@ require_relative "filterable/version"
 module ActiveRecord
   module Filterable
     class Error < StandardError; end
-    # Your code goes here...
   end
 end
+
+require_relative "filterable/railtie" if defined?(Rails::Railtie)
