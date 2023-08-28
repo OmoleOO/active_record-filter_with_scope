@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ActiveRecord
-  module Filterable
+  module FilterWithScope
     # Configuration module
     module Config
       mattr_accessor :filterable_model_scope_mapping

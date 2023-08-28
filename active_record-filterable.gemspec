@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative "lib/active_record/filterable/version"
+require_relative "lib/active_record/filter_with_scope/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "active_record-filterable"
-  spec.version = ActiveRecord::Filterable::VERSION
+  spec.name = "active_record-filter_with_scope"
+  spec.version = ActiveRecord::FilterWithScope::VERSION
   spec.authors = ["Olumide Omole"]
   spec.email = ["olumideomole@gmail.com"]
 
   spec.summary = "Filter ActiveRecord model"
   spec.description = "Filter ActiveRecord model"
-  spec.homepage = "https://github.com/OmoleOO/active_record-filterable"
+  spec.homepage = "https://github.com/OmoleOO/active_record-filter_with_scope"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 

@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in active_record-filterable.gemspec
+# Specify your gem's dependencies in active_record-filter_with_scope.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

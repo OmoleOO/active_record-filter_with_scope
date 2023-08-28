@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "filterable/version"
+require_relative "filter_with_scope/version"
 
 module ActiveRecord
   # Enable filter for active_record subclasses
-  module Filterable
+  module FilterWithScope
     class Error < StandardError; end
     class ArgumentError < Error; end
     class UndefinedModelScopeError < Error; end
@@ -19,4 +19,4 @@ module ActiveRecord
   end
 end
 
-require_relative "filterable/railtie" if defined?(Rails::Railtie)
+require_relative "filter_with_scope/railtie" if defined?(Rails::Railtie)

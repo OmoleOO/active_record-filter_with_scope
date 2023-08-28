@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(File.expand_path("./lib", __dir__))
 
 require "rails/railtie"
 require "active_record"
-require "active_record/filterable"
+require "active_record/filter_with_scope"
 
 require "minitest/autorun"
 
 require "logger"
 require "debug"
 
-ActiveRecord::Filterable::Railtie.run_initializers
+ActiveRecord::FilterWithScope::Railtie.run_initializers
 
 require_relative "boot/active_record"
 

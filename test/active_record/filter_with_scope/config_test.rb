@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ActiveRecord
-  module Filterable
+  module FilterWithScope
     class ConfigTest < Minitest::Test
       def setup
         super
@@ -11,7 +11,7 @@ module ActiveRecord
       end
 
       def filterable_model_scope_mapping
-        ActiveRecord::Filterable::Config.filterable_model_scope_mapping
+        ActiveRecord::FilterWithScope::Config.filterable_model_scope_mapping
       end
 
       def test_should_map_filter_keys_to_model_scope

@@ -3,7 +3,7 @@
 require "test_helper"
 
 module ActiveRecord
-  module Filterable
+  module FilterWithScope
     class FilterTest < Minitest::Test
       def setup
         super
@@ -40,7 +40,7 @@ module ActiveRecord
         klazz = klass
         klazz.filter_with filter_keys: @valid_params.keys
 
-        assert_raises(ActiveRecord::Filterable::UndefinedModelScopeError) { klazz.filter(@valid_params) }
+        assert_raises(ActiveRecord::FilterWithScope::UndefinedModelScopeError) { klazz.filter(@valid_params) }
       end
 
       def test_active_record_subclass_can_be_filtered_with_valid_params

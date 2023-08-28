@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ActiveRecord
-  module Filterable
+  module FilterWithScope
     # filter active record
     module Filter
       mattr_accessor :filter_params, :initial_records
@@ -30,7 +30,7 @@ module ActiveRecord
       end
 
       def filter_keys_model_scope_mapping
-        @filter_keys_model_scope_mapping ||= ActiveRecord::Filterable::Config.filterable_model_scope_mapping
+        @filter_keys_model_scope_mapping ||= ActiveRecord::FilterWithScope::Config.filterable_model_scope_mapping
       end
 
       def validate_model_scopes_defined!
@@ -39,7 +39,7 @@ module ActiveRecord
           model_scope = filter_keys_model_scope_mapping[filter_key]
           next if klass.respond_to?(model_scope)
 
-          raise ActiveRecord::Filterable::UndefinedModelScopeError,
+          raise ActiveRecord::FilterWithScope::UndefinedModelScopeError,
                 "The #{klass.name} model does not implement #{model_scope}"
         end
       end
