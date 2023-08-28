@@ -11,5 +11,10 @@ module ActiveRecord
 
       assert_equal "PlainRubyClass is not filterable, only ActiveRecord subclasses are!", error.message
     end
+
+    def test_can_be_extended_by_active_record_subclass
+      test_active_record_subclass = Class.new(ApplicationRecord)
+      assert_silent { test_active_record_subclass.extend ActiveRecord::Filterable }
+    end
   end
 end
