@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Olumide Omole"]
   spec.email = ["olumideomole@gmail.com"]
 
-  spec.summary = "Enables Rails ActiveRecord to Filter records out of the box."
-  spec.description = "nables Rails ActiveRecord to Filter records out of the box."
+  spec.summary = "Enables Rails ActiveRecord to filter records out of the box."
+  spec.description = "ActiveRecord::FilterWithScope extends Rails ActiveRecord gently to filter records out of the box."
   spec.homepage = "https://github.com/OmoleOO/active_record-filter_with_scope"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "activerecord", ">= 7.0"
+  spec.add_dependency "activerecord", "~> 7.0"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
