@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Olumide Omole"]
   spec.email = ["olumideomole@gmail.com"]
 
-  spec.summary = "Filter ActiveRecord model"
-  spec.description = "Filter ActiveRecord model"
+  spec.summary = "Enables Rails ActiveRecord to Filter records out of the box."
+  spec.description = "nables Rails ActiveRecord to Filter records out of the box."
   spec.homepage = "https://github.com/OmoleOO/active_record-filter_with_scope"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
