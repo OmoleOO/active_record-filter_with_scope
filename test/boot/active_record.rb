@@ -17,3 +17,7 @@ end
 
 class Job < ApplicationRecord
 end
+
+class PlainRubyClass
+  def test; end
+end
