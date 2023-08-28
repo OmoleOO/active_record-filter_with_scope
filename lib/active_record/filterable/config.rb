@@ -4,10 +4,13 @@ module ActiveRecord
   module Filterable
     # Configuration module
     module Config
+      mattr_accessor :filterable_model_scope_mapping
+      private :filterable_model_scope_mapping=
+
       def filter_with(filter_keys: [], scope_prefix: nil, &block)
         mapper = Mapper.new(filter_keys, scope_prefix)
         block.call(mapper) if block_given?
-        mapper
+        Config.filterable_model_scope_mapping = mapper.mapping
       end
 
       # Mapper class
