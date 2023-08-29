@@ -1,5 +1,7 @@
 # ActiveRecord::FilterWithScope
-Rubygem that enables Rails ActiveRecord to Filter records out of the box.
+Rubygem that enables Rails ActiveRecord to Filter records out of the box. The handy tool that lets you filter your ActiveRecord models using the scopes you have already defined.
+
+All you need to do is map the filter parameters to the corresponding scopes in the setup, and then call the filter class method on your model.
 
 ## Installation
 

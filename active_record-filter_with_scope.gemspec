@@ -9,7 +9,12 @@ Gem::Specification.new do |spec|
   spec.email = ["olumideomole@gmail.com"]
 
   spec.summary = "Enables Rails ActiveRecord to filter records out of the box."
-  spec.description = "ActiveRecord::FilterWithScope extends Rails ActiveRecord gently to filter records out of the box."
+  spec.description = <<-TEXT
+    ActiveRecord::FilterWithScope extends Rails ActiveRecord gently to filter records out of the box.
+    The handy tool that lets you filter your ActiveRecord models using the scopes you have already defined.
+
+    All you need to do is map the filter parameters to the corresponding scopes in the setup, and then call the filter class method on your model.
+  TEXT
   spec.homepage = "https://github.com/OmoleOO/active_record-filter_with_scope"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
