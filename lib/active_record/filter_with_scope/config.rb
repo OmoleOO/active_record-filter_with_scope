@@ -5,7 +5,6 @@ module ActiveRecord
     # Configuration module
     module Config
       mattr_accessor :filterable_model_scope_mapping
-      private :filterable_model_scope_mapping=
 
       def filter_with(filter_keys: [], scope_prefix: nil, &block)
         mapper = Mapper.new(filter_keys, scope_prefix)
@@ -50,6 +49,9 @@ module ActiveRecord
           Mapper.class_eval attr_writers.join("\n\n"), location.path, location.lineno
         end
       end
+      private_constant :Mapper
+
+      private :filterable_model_scope_mapping=
     end
   end
 end

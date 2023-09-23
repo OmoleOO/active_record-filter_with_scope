@@ -5,7 +5,6 @@ module ActiveRecord
     # filter active record
     module Filter
       mattr_accessor :filter_params, :initial_records
-      private :filter_params=
 
       def filter(filter_params, initial_records: where(nil))
         self.filter_params   = filter_params
@@ -14,6 +13,8 @@ module ActiveRecord
         validate_model_scopes_defined!
         call_model_scopes_on_filter_params
       end
+
+      private
 
       def call_model_scopes_on_filter_params
         return none if filter_params.blank?
@@ -43,6 +44,8 @@ module ActiveRecord
                 "The #{klass.name} model does not implement #{model_scope}"
         end
       end
+
+      private :filter_params=
     end
   end
 end
