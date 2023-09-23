@@ -16,6 +16,18 @@ class ApplicationRecord < ActiveRecord::Base
 end
 
 class Job < ApplicationRecord
+  def self.create_dynamic_scopes(scope_names)
+    scope_names.each do |key|
+      class_eval(
+        # Class Job
+        #   scope :title, ->(val) { where(:title => val) }
+        # end
+        <<-RUBY, __FILE__, __LINE__ + 1
+          scope :#{key}, ->(val) { where(:#{key} => val) }
+        RUBY
+      )
+    end
+  end
 end
 
 class PlainRubyClass
