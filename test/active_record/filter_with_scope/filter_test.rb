@@ -33,7 +33,7 @@ module ActiveRecord
 
         filtered_records = klazz.filter({})
 
-        assert_respond_to filtered_records, :to_sql
+        assert_equal klazz.none, filtered_records
       end
 
       def test_error_is_raised_when_model_scope_is_undefined
