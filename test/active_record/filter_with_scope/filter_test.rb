@@ -10,7 +10,7 @@ module ActiveRecord
         @valid_params = { title: "Fancy (m/w/d)", description: "Fancy description", location: "Ibadan" }
       end
 
-      def klass
+      def job_class
         Class.new(Job)
       end
 
@@ -28,7 +28,7 @@ module ActiveRecord
       end
 
       def test_active_record_subclass_can_be_filtered
-        klazz = klass
+        klazz = job_class
         klazz.filter_with filter_keys: []
 
         filtered_records = klazz.filter({})
@@ -37,16 +37,16 @@ module ActiveRecord
       end
 
       def test_error_is_raised_when_model_scope_is_undefined
-        klazz = klass
+        klazz = job_class
         klazz.filter_with filter_keys: @valid_params.keys
 
         assert_raises(ActiveRecord::FilterWithScope::UndefinedModelScopeError) { klazz.filter(@valid_params) }
       end
 
       def test_active_record_subclass_can_be_filtered_with_valid_params
-        object = klass.create!(@valid_params)
+        job = job_class.create!(@valid_params)
 
-        klazz = object.class
+        klazz = job.class
         attach_model_scope_to(klazz, @valid_params.keys)
 
         klazz.filter_with filter_keys: @valid_params.keys
