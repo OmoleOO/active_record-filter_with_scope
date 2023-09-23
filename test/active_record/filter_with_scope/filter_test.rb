@@ -14,19 +14,6 @@ module ActiveRecord
         Class.new(Job)
       end
 
-      def attach_model_scope_to(klazz, param_keys)
-        param_keys.each do |key|
-          klazz.class_eval(
-            # Class Job
-            #   scope :title, ->(val) { where(:title => val) }
-            # end
-            <<-RUBY, __FILE__, __LINE__ + 1
-              scope :#{key}, ->(val) { where(:#{key} => val) }
-            RUBY
-          )
-        end
-      end
-
       def test_active_record_subclass_can_be_filtered
         klazz = job_class
         klazz.filter_with filter_keys: []
@@ -47,7 +34,7 @@ module ActiveRecord
         job = job_class.create!(@valid_params)
 
         klazz = job.class
-        attach_model_scope_to(klazz, @valid_params.keys)
+        klazz.create_dynamic_scopes(@valid_params.keys)
 
         klazz.filter_with filter_keys: @valid_params.keys
 
